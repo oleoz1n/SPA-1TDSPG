@@ -6,6 +6,13 @@ import {
   AiOutlineDelete as ExcluirIcon,
 } from 'react-icons/ai'
 export default function Produtos() {
+    //Criando objeto para alterar os estilos pelo comando style do html
+    const estiloCelulas = {
+        width: '10%',
+        textAlign: 'left',
+        fontWeight: 'bold'
+    }
+
   return (
     <div>
       <h1>Produtos</h1>
@@ -22,13 +29,15 @@ export default function Produtos() {
                     </thead>
                     <tbody>
                         {listaProdutos.map((produto, index) => (
-                            <tr key={index}>
-                                <td>{produto.id}</td>
+                            <tr key={index} className={(produto.id % 2 == 0) ? "linhaCinza": "linhaBranca"}>
+                                {/* Adicionando estilo no comando style*/}
+                                <td style={estiloCelulas }>{produto.id}</td>
                                 <td>{produto.nome}</td>
                                 <td>{produto.desc}</td>
                                 <td>{produto.preco}</td>
                                 <td>
-                                    <img src={produto.img} alt={produto.desc} />
+                                    {/* Adicionando estilo no comando style*/}
+                                    <img style={{width: "100px"}} src={produto.img} alt={produto.desc} />
                                 </td>
                                 <td>
                                     <Link to={`/editar/produto/${produto.id}`}>

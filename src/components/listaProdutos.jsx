@@ -28,7 +28,3 @@ export const listaProdutos = [
         img: `https://picsum.photos/seed/produto4/200/300`,
     },
 ] 
-
-export const getProdutoById = id => {
-    return listaProdutos.find(produto => produto.id === parseInt(id))
-}
