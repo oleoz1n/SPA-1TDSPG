@@ -1,0 +1,30 @@
+.tabelaProd {
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 2px solid black;
+
+    .tblImg{
+        width: 15%;
+        transition: .2s;
+        &:hover{
+            width: 100%;
+        }
+    }
+    .tabelaCabecalho {
+        background-color: #eee;
+        border: 2px solid black;
+    }
+    
+    .tabelaDados{
+        border: 2px solid black;
+        text-align: center;
+    }
+    
+    .tabelaLinha {
+        height: 48px ;
+        &:hover{
+            background-color: #808080;
+        }
+    }
+}
+

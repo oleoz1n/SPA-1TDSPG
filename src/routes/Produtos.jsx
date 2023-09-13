@@ -1,45 +1,39 @@
 import { Link } from "react-router-dom";
 import { listaProdutos } from "../components/ListaProdutos";
-import './Produtos.css'
+import styles from './Produtos.module.css'
 import {
   AiOutlineEdit as EditarIcon,
   AiOutlineDelete as ExcluirIcon,
 } from 'react-icons/ai'
 export default function Produtos() {
     //Criando objeto para alterar os estilos pelo comando style do html
-    const estiloCelulas = {
-        width: '10%',
-        textAlign: 'left',
-        fontWeight: 'bold'
-    }
-
   return (
     <div>
       <h1>Produtos</h1>
-      <table className="fl-table">
+      <table className={styles.tabelaProd}>
       <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>NOME</th>
-                            <th>DESCRIÇÃO</th>
-                            <th>PREÇO</th>
-                            <th>IMG</th>
-                            <th>EDITAR/EXCLUIR</th>
+                            <th className={styles.tabelaCabecalho}>ID</th>
+                            <th className={styles.tabelaCabecalho}>NOME</th>
+                            <th className={styles.tabelaCabecalho}>DESCRIÇÃO</th>
+                            <th className={styles.tabelaCabecalho}>PREÇO</th>
+                            <th className={styles.tabelaCabecalho}>IMG</th>
+                            <th className={styles.tabelaCabecalho}>EDITAR/EXCLUIR</th>
                         </tr>
                     </thead>
                     <tbody>
                         {listaProdutos.map((produto, index) => (
-                            <tr key={index} className={(produto.id % 2 == 0) ? "linhaCinza": "linhaBranca"}>
+                            <tr key={index} className={(produto.id % 2 == 0) ? `${styles.tabelaLinha} linhaCinza`: `${styles.tabelaLinha} linhaBranca`}>
                                 {/* Adicionando estilo no comando style*/}
-                                <td style={estiloCelulas }>{produto.id}</td>
-                                <td>{produto.nome}</td>
-                                <td>{produto.desc}</td>
-                                <td>{produto.preco}</td>
-                                <td>
+                                <td className={styles.tabelaDados}>{produto.id}</td>
+                                <td className={styles.tabelaDados}>{produto.nome}</td>
+                                <td className={styles.tabelaDados}>{produto.desc}</td>
+                                <td className={styles.tabelaDados}>{produto.preco}</td>
+                                <td className={styles.tabelaDados}>
                                     {/* Adicionando estilo no comando style*/}
-                                    <img style={{width: "100px"}} src={produto.img} alt={produto.desc} />
+                                    <img className={styles.tblImg} src={produto.img} alt={produto.desc} />
                                 </td>
-                                <td>
+                                <td className={styles.tabelaDados}>
                                     <Link to={`/editar/produto/${produto.id}`}>
                                         <EditarIcon />
                                     </Link>
