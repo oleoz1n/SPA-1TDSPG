@@ -1,15 +1,29 @@
 import { Link } from "react-router-dom";
 import { listaProdutos } from "../components/ListaProdutos";
 import styles from './Produtos.module.css'
+import { useState, useEffect } from "react";
 import {
   AiOutlineEdit as EditarIcon,
   AiOutlineDelete as ExcluirIcon,
 } from 'react-icons/ai'
+
+
 export default function Produtos() {
+    const [counter, setCounter] = useState(0)
+    useEffect(()=>{
+        console.log('useEffect que renderiza sempre')
+    })
+    
     //Criando objeto para alterar os estilos pelo comando style do html
   return (
     <div>
       <h1>Produtos</h1>
+
+    <div>
+        <button onClick={()=> setCounter(counter+1)}>COUNTER - {counter}</button>
+    </div>
+
+
       <table className={styles.tabelaProd}>
       <thead>
                         <tr>
