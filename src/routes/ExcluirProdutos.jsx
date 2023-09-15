@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { listaProdutos } from '../components/ListaProdutos'
+import { listaProdutos } from "../components/ListaProdutos";
 
 export default function ExcluirProdutos() {
     document.title = 'Excluir Produtos'
