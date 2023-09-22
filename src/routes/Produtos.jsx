@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { listaProdutos } from "../components/ListaProdutos";
+import ModalExemplo from "../components/ModalExemplo/ModalExemplo";
 import styles from './Produtos.module.css'
 import { useState, useEffect } from "react";
 import {
@@ -10,15 +10,25 @@ import {
 
 export default function Produtos() {
 
-    const [novaListaProdutos, setNovaListaProsutos] = useState([{}]);
+    const [novaListaProdutos, setNovaListaProdutos] = useState([{}]);
 
+    const [openModal, setOpenModal] = useState(false);
 
     useEffect(() =>{
-        //useEffect que renderiza apenas uma vez
-        setNovaListaProsutos(listaProdutos)
-    },[ ])
+        // Fetch = API do JS que faz requisições HTTP, ele usa como padrão o GET e retorna uma Promise com um url
+        fetch('http://localhost:5000/produtos', {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(data => setNovaListaProdutos(data)).catch(err => console.error(err))
+    },[])
   return (
     <div>
+        <ModalExemplo open={openModal} setOpen={setOpenModal} />
+        <h1>Produtos</h1>
+        <button onClick={()=>setOpenModal(true)}>OPEN</button>
       <table className={styles.tabelaProd}>
       <thead>
                         <tr className={styles.tabelaCabecalho}>

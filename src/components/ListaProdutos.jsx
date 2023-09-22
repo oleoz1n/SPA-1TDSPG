@@ -26,5 +26,5 @@ export const listaProdutos = [
         desc: 'Descrição do produto 4',
         preco: 400,
         img: `https://picsum.photos/seed/produto4/200/300`,
-    },
+    }
 ] 
