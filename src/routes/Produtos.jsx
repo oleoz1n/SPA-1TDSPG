@@ -9,38 +9,16 @@ import {
 
 
 export default function Produtos() {
-    const [counter, setCounter] = useState(0)
+
     const [novaListaProdutos, setNovaListaProsutos] = useState([{}]);
 
-    const [counter2, setCounter2] = useState(0);
 
-    useEffect(() =>{
-        //useEffect que renderiza sempre
-        console.log('useEffect que renderiza sempre')
-    },)
     useEffect(() =>{
         //useEffect que renderiza apenas uma vez
         setNovaListaProsutos(listaProdutos)
-        console.log('useEffect que renderiza apenas uma vez')
     },[ ])
-    useEffect(() =>{
-        //useEffect que renderiza apenas se o objeto/variavel/elemento for alterado que está sendo monitorado no array de denpendencias sofrer alteração
-        console.log('useEffect que renderiza apenas se o objeto/variavel/elemento for alterado que está sendo monitorado no array de denpendencias sofrer alteração')
-    },[counter2])
-    
-    //Criando objeto para alterar os estilos pelo comando style do html
   return (
     <div>
-      <h1>Produtos</h1>
-
-    <div>
-        <button onClick={()=> setCounter(counter+1)}>COUNTER - {counter}</button>
-    </div>
-    <div>
-        <button onClick={()=> setCounter2(counter2+1)}>COUNTER - {counter2}</button>
-    </div>
-
-
       <table className={styles.tabelaProd}>
       <thead>
                         <tr className={styles.tabelaCabecalho}>
