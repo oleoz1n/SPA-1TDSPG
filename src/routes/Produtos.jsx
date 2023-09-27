@@ -28,7 +28,7 @@ export default function Produtos() {
     <div>
         <ModalExemplo open={openModal} setOpen={setOpenModal} />
         <h1>Produtos</h1>
-        <button onClick={()=>setOpenModal(true)}>OPEN</button>
+        <Link onClick={()=>setOpenModal(true)}>Adicionar Produto</Link>
       <table className={styles.tabelaProd}>
       <thead>
                         <tr className={styles.tabelaCabecalho}>

@@ -44,7 +44,7 @@ export default function EditarProdutos() {
     <>
       <main>
         <h1>Editar Produtos</h1>
-        <form action="#" method="get" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>Editar Produto</legend>
             <div>
