@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import style from "./ModalExemplo.module.css";
+import "./ModalInserir.scss";
 
 export default function ModalExemplo(props) {
   document.title = "CADASTRO";
@@ -56,7 +56,7 @@ export default function ModalExemplo(props) {
 
   if (props.open) {
     return (
-      <div className={style.container}>
+      <div className="container">
         <h1>Cadastrar Produto</h1>
         <div>
           <form onSubmit={handleSubmit}>
