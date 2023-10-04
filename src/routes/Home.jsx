@@ -3,12 +3,14 @@ export default function Home(){
     return (
         <>
             <h1>Produtos em oferta...</h1>
+            <div>
             <figure>
                 <figcaption>
                     Oferta
                 </figcaption>
                 <img src="/online-shopping-640.png" alt="Produtos diversos" />
             </figure>
+            </div>
         </>
     )
 }
