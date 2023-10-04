@@ -19,6 +19,7 @@ export default function ExcluirProdutos() {
         navigate('/produtos')
 
     }
+    
     return (
         <>
             <main>

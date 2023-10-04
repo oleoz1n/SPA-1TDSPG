@@ -24,6 +24,20 @@ export default function Produtos() {
         }).then(response => response.json())
         .then(data => setNovaListaProdutos(data)).catch(err => console.error(err))
     },[])
+
+
+    const handleExcluir = (id)=>{
+        fetch(`http://localhost:5000/produtos/${id}`,{
+            method: 'DELETE',
+            headers:{
+                'content-type': 'application/json'
+            },
+        }).then(response => response.json())
+        .catch(e=> console.log('Erro: '+e))
+
+        window.location("/produtos");
+
+        }
   return (
     <div>
         <ModalExemplo open={openModal} setOpen={setOpenModal} />
@@ -57,8 +71,8 @@ export default function Produtos() {
                                         <EditarIcon />
                                     </Link>
                                     <span> / </span>
-                                    <Link to={`/excluir/produto/${produto.id}`}>
-                                        <ExcluirIcon />
+                                    <Link onClick={()=>handleExcluir(produto.id)}>
+                                        <ExcluirIcon/>
                                     </Link>
                                 </td>
                             </tr>
